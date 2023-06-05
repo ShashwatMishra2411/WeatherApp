@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+<h1 id = "header">Weather</h1>
+<div id="selector">
+    <label for="city">Choose a city:</label>
+    <select name="city" id="city">
+        <option value="del" id="del">Delhi</option>
+        <option value="lond" id="lond">London</option>
+        <option value="ny" id="ny">New York</option>
+        <option value="syd" id="syd">Sydney</option>
+        <option value="tok" id="tok">Tokyo</option>
+    </select>
+    <input type="submit" value="Submit" id="submit">
+</div>
+<div id="details">
+    <div id="card1">
+    <div id="current">
+    <div id="lati"></div>
+    <div id="long"></div>
+    <div id="ti"></div>
+    <div id="temp"></div>
+</div>
+<div id="daily">
+    <div id="dates"></div>
+    <div id="max"></div>
+    <div id="min"></div>
+</div>
+<div id="pics">
+    <div id="svg"></div>
+    <div id="weather"></div>
+</div>
+</div>
+<div id="card2"></div>
+</div>
+<script src="script.js"></script>
+</body>
+</html>

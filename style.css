@@ -1,0 +1,63 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    gap: 4vh;
+}
+#header{
+}
+#selector{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2vh;
+    border: 1px solid black;
+}
+#city{
+    width: 50vw;
+    height: 5vh;
+}
+#details{
+    display: flex;
+    width: 90vw;
+    height: 60vh;
+    gap: 1.2vh;
+}
+#card1{
+    display: flex;
+    flex-direction: column;
+    gap: 2vh;
+    width: 100%;
+    height: 100%;
+    border: 1px solid black;
+    border-radius: 20px;
+    padding: 3vh;
+    box-shadow: 1vh 1vh 0px grey;
+    font-size: 2.0vw;
+}
+#card2{
+    width: 100%;
+    height: 100%;
+    border: 1px solid black;
+    border-radius: 20px;
+    padding: 3vh;
+    box-shadow: 1vh 1vh 0px grey;
+}
+#svg{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 25vh;
+}
+img{
+    height: 100%;
+}
+svg{
+    height: 100%;
+}
