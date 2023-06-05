@@ -30,7 +30,7 @@ function onSelectChange() {
             console.log("Error");
             break;
     }
-    let p = fetch(`https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&daily=weathercode,temperature_2m_max,temperature_2m_min&current_weather=true&forecast_days=1&timezone=auto`);
+    let p = fetch(`https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&daily=temperature_2m_max,temperature_2m_min,sunrise,sunset,precipitation_sum,rain_sum&current_weather=true&forecast_days=1&timezone=auto`);
 p.then(
     (response)=>
     {
@@ -49,7 +49,11 @@ p.then(
         let time = t[1]
         let date = t[0]
         let wc = data.current_weather.weathercode;
-
+        let preci = data.daily.precipitation_sum[0];
+        let rains = data.daily.rain_sum[0];
+        let rise = data.daily.sunrise[0].split("T")[1];
+        let set = data.daily.sunset[0].split("T")[1];
+        console.log(preci, rain, rise, set)
         if(wc==0||wc==1)
         {
             svg.innerHTML = `<img src="clear.svg" alt="Nope">`
@@ -80,13 +84,21 @@ p.then(
         else{
             weather.innerHTML = ("Thunderstorm")
         }
-        temp.innerHTML =  `Temperature ${temperature}&#xb0`
+        temp.innerHTML =  `${temperature}&#8451`;
         lati.innerHTML = "Latitude " + latitude
         long.innerHTML = "Longitude " + longitude
-        ti.innerHTML = "Time: " + time
+        ti.innerHTML = "Last Updated(Local Time): "+time
         dates.innerHTML = "Date: " + date;
         max.innerHTML = "Maximum Temperature: " + maxt
         min.innerHTML = "Minimum Temperature: " + mint
+        windspeed.innerHTML = "Wind Speed: " + wins;
+        w.innerHTML = `<svg id=wsvg xmlns="http://www.w3.org/2000/svg" width="300" height="300" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16" id="IconChangeColor"> <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z" id="mainIconPathAttribute" stroke-width="0" stroke="#fffafa" filter="url(#shadow)"></path> <filter id="shadow"><feDropShadow id="shadowValue" stdDeviation="0.1" dx="-0.3" dy="-0.1" flood-color="black"></feDropShadow></filter></svg>`
+        wsvg.style.transform = `rotate(${wind}deg)`;
+        winddirection.innerHTML = "Wind Direction: " + wind+"&#xb0";
+        precipitation.innerHTML = "Precipitation: "+preci+" mm";
+        rain.innerHTML = "Rain: "+rains+" mm";
+        riset.innerHTML = "Sunrise: "+rise+"a.m";
+        sett.innerHTML = "Sunset: " + set+ "p.m";
     });
   }
 submit.addEventListener("click", onSelectChange)
