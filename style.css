@@ -9,6 +9,7 @@ body{
     width: 100%;
     height: 100vh;
     gap: 4vh;
+    background-image: linear-gradient(to top, #00c6fb 0%, #005bea 100%);
 }
 #header{
 }
@@ -30,6 +31,7 @@ body{
     gap: 1.2vh;
     overflow: hidden;
     padding: 10px;
+    
 }
 #card1{
     display: flex;
@@ -41,22 +43,30 @@ body{
     border-radius: 20px;
     padding: 3vh;
     box-shadow: 1vh 1vh 0px grey;
-    font-size: 2.0vw;
+    font-size: 2vw;
     overflow: hidden;
+    background-color: white;
 }
 #current{
     display: flex;
     position: relative;
     gap: 5px;
     top: 1vh;
-    height: 30%;
-    font-weight: 600;
+    height: 25%;
+    font-weight: 600; 
+    }
+    .left{
+        width: 56%;
+        font-size: 1.5vw;
+        overflow: hidden;
     }
     #daily{
         display: flex;
         flex-direction: column;
         justify-content: center;
-        flex-basis: 40%;
+        height: 25%;
+        font-size: 1.5vw;
+        font-weight: 600;
     }
     #temp{
         display: inline;
@@ -64,7 +74,7 @@ body{
         font-size: 6vw;
     }
     #pics{
-        flex-basis: 50%;
+        height: 50%;
     }
     #svg{
         display: flex;
@@ -92,6 +102,9 @@ body{
     box-shadow: 1vh 1vh 0px grey;
     font-size: 2.0vw;
     overflow: hidden;
+    font-weight: 600;
+    background-image: linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%);
+    background-repeat: no-repeat;
 }
 #wind{
     flex-basis: 30%;

@@ -25,7 +25,10 @@ function onSelectChange() {
         case "syd":
             lat=-33.87;
             lon=151.21;
-            break;  
+            break;
+        case "pc":
+            lat="19.4564";
+            lon="72.7925"; 
         default:
             console.log("Error");
             break;
@@ -56,6 +59,7 @@ p.then(
         console.log(preci, rain, rise, set)
         if(wc==0||wc==1)
         {
+            card1.style.background = "linear-gradient(to top, #d5d4d0 0%, #d5d4d0 1%, #eeeeec 31%, #efeeec 75%, #e9e9e7 100%)";
             svg.innerHTML = `<img src="clear.svg" alt="Nope">`
             weather.innerHTML = ("clear")
         }
@@ -64,12 +68,18 @@ p.then(
             weather.innerHTML = ("cloudy")
         }
         else if(wc==45||wc==48){
+            svg.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" id="IconChangeColor" height="200" width="200"> <g> <path fill="none" d="M0 0h24v24H0z" id="mainIconPathAttribute" filter="url(#shadow)"></path> <path d="M1.584 13.007a8 8 0 0 1 14.873-5.908 5.5 5.5 0 0 1 6.52 5.908h-2.013A3.5 3.5 0 0 0 15 10.05V10a6 6 0 1 0-11.193 3.007H1.584zM4 19h17v2H4v-2zm-2-4h21v2H2v-2z" id="mainIconPathAttribute"></path> </g> <filter id="shadow"><feDropShadow id="shadowValue" stdDeviation=".5" dx="0" dy="0" flood-color="black"></feDropShadow></filter></svg>`
             weather.innerHTML = ("Fog")
         }
         else if(wc>50||wc<58){
+            card1.style.backgroundImage = "url(weather/drizzle.jpg)";
+            card1.style.backgroundRepeat = "no-repeat";
+            card1.style.backgroundSize = "105% 105%";
+            svg.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" fill="currentColor" class="bi bi-cloud-drizzle" viewBox="0 0 16 16" id="IconChangeColor"> <path d="M4.158 12.025a.5.5 0 0 1 .316.633l-.5 1.5a.5.5 0 0 1-.948-.316l.5-1.5a.5.5 0 0 1 .632-.317zm6 0a.5.5 0 0 1 .316.633l-.5 1.5a.5.5 0 0 1-.948-.316l.5-1.5a.5.5 0 0 1 .632-.317zm-3.5 1.5a.5.5 0 0 1 .316.633l-.5 1.5a.5.5 0 0 1-.948-.316l.5-1.5a.5.5 0 0 1 .632-.317zm6 0a.5.5 0 0 1 .316.633l-.5 1.5a.5.5 0 1 1-.948-.316l.5-1.5a.5.5 0 0 1 .632-.317zm.747-8.498a5.001 5.001 0 0 0-9.499-1.004A3.5 3.5 0 1 0 3.5 11H13a3 3 0 0 0 .405-5.973zM8.5 2a4 4 0 0 1 3.976 3.555.5.5 0 0 0 .5.445H13a2 2 0 0 1 0 4H3.5a2.5 2.5 0 1 1 .605-4.926.5.5 0 0 0 .596-.329A4.002 4.002 0 0 1 8.5 2z" id="mainIconPathAttribute" stroke-width="0" stroke="#ff0000"></path> </svg>`
             weather.innerHTML = ("Drizzle")
         }
         else if(wc>60||wc<68){
+            svg.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" fill="currentColor" class="bi bi-cloud-rain-heavy-fill" viewBox="0 0 16 16" id="IconChangeColor"> <path d="M4.176 11.032a.5.5 0 0 1 .292.643l-1.5 4a.5.5 0 0 1-.936-.35l1.5-4a.5.5 0 0 1 .644-.293zm3 0a.5.5 0 0 1 .292.643l-1.5 4a.5.5 0 0 1-.936-.35l1.5-4a.5.5 0 0 1 .644-.293zm3 0a.5.5 0 0 1 .292.643l-1.5 4a.5.5 0 0 1-.936-.35l1.5-4a.5.5 0 0 1 .644-.293zm3 0a.5.5 0 0 1 .292.643l-1.5 4a.5.5 0 0 1-.936-.35l1.5-4a.5.5 0 0 1 .644-.293zm.229-7.005a5.001 5.001 0 0 0-9.499-1.004A3.5 3.5 0 1 0 3.5 10H13a3 3 0 0 0 .405-5.973z" id="mainIconPathAttribute"></path> </svg>`
             weather.innerHTML = ("Rain")
         }
         else if(wc>70||wc<78){
