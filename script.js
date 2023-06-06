@@ -7,9 +7,21 @@ function onSelectChange() {
     let lon;
     console.log(vcity);
     switch(vcity){
+        case "chn":
+            lat=13.0827;
+            lon=80.2707;
+            break;
+        case "mum":
+            lat=19.0760;
+            lon=72.8777;
+            break;
         case "ny":
             lat=40.7128;
             lon=-74.0060;
+            break;
+        case "gzp":
+            lat=25.5878;
+            lon=83.5783;
             break;
         case "del":
             lat=28.7041;
@@ -29,7 +41,16 @@ function onSelectChange() {
             break;
         case "pc":
             lat="19.4564";
-            lon="72.7925"; 
+            lon="72.7925";
+            break; 
+        case "mos":
+            lat="55.7558";
+            lon="37.6173";
+            break; 
+        case "dur":
+            lat="-29.8587";
+            lon="31.0218";
+            break; 
         default:
             console.log("Error");
             break;
@@ -164,8 +185,8 @@ p.then(
         long.innerHTML = "Longitude " + longitude
         ti.innerHTML = "Last Updated (Local Time): "+time
         dates.innerHTML = "Date: " + date;
-        max.innerHTML = "Maximum Temperature: " + maxt
-        min.innerHTML = "Minimum Temperature: " + mint
+        max.innerHTML = "Maximum Temperature: " + maxt +"&#8451";
+        min.innerHTML = "Minimum Temperature: " + mint +"&#8451";
         windspeed.innerHTML = "Wind Speed: " + wins;
         w.innerHTML = `<svg id=wsvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m18.707 12.707-3 3a1 1 0 0 1-1.414-1.414L15.586 13H6a1 1 0 0 1 0-2h9.586l-1.293-1.293a1 1 0 0 1 1.414-1.414l3 3a1 1 0 0 1 0 1.414z" style="fill:#f97c4b" data-name="Right"/></svg>`
         wsvg.style.transform = `rotate(${wind}deg)`;
