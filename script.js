@@ -167,7 +167,7 @@ p.then(
         max.innerHTML = "Maximum Temperature: " + maxt
         min.innerHTML = "Minimum Temperature: " + mint
         windspeed.innerHTML = "Wind Speed: " + wins;
-        w.innerHTML = `<svg id=wsvg xmlns="http://www.w3.org/2000/svg" width="300" height="300" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16" id="IconChangeColor"> <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z" id="mainIconPathAttribute" stroke-width="0" stroke="#fffafa" filter="url(#shadow)"></path> <filter id="shadow"><feDropShadow id="shadowValue" stdDeviation="0.1" dx="-0.3" dy="-0.1" flood-color="black"></feDropShadow></filter></svg>`
+        w.innerHTML = `<svg id=wsvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m18.707 12.707-3 3a1 1 0 0 1-1.414-1.414L15.586 13H6a1 1 0 0 1 0-2h9.586l-1.293-1.293a1 1 0 0 1 1.414-1.414l3 3a1 1 0 0 1 0 1.414z" style="fill:#f97c4b" data-name="Right"/></svg>`
         wsvg.style.transform = `rotate(${wind}deg)`;
         winddirection.innerHTML = "Wind Direction: " + wind+"&#xb0";
         precipitation.innerHTML = "Precipitation: "+preci+" mm";
