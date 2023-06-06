@@ -162,7 +162,7 @@ p.then(
         temp.innerHTML =  `${temperature}&#8451`;
         lati.innerHTML = "Latitude " + latitude
         long.innerHTML = "Longitude " + longitude
-        ti.innerHTML = "Last Updated(Local Time): "+time
+        ti.innerHTML = "Last Updated (Local Time): "+time
         dates.innerHTML = "Date: " + date;
         max.innerHTML = "Maximum Temperature: " + maxt
         min.innerHTML = "Minimum Temperature: " + mint

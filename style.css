@@ -49,7 +49,8 @@ label{
 #city{
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
+    position: relative;
     width: 50vw;
     height: 5vh;
     font-family: 'Monomaniac One', sans-serif;
@@ -67,7 +68,6 @@ label{
     gap: 1.2vh;
     overflow: hidden;
     padding: 10px;
-    
 }
 #card1{
     display: flex;
@@ -175,7 +175,24 @@ svg{
     background-image: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
     border: none;
     border-radius: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-size: 3vh;
 }
 #submit:active{
     box-shadow: inset 2px 2px 0px black;
+}
+@media all and (max-width: 650px){
+    #header{
+        font-size: 10vw;
+    }
+#submit{
+    font-size: 4vw;
+}
+.left{
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 1.4vw;
+}
 }
